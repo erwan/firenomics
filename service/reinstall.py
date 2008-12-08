@@ -37,6 +37,6 @@ render = web.template.render('templates', base='base')
 
 class reinstall:
   def GET(self):
-    installData = getInstallJSON()
+    # installData = getInstallJSON()
     jsondata = "toto"
     return render.reinstall(jsondata)

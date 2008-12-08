@@ -5,6 +5,7 @@ from vendor import web
 from models import *
 from utils import analytics
 import sanitize
+import reinstall
 
 PUB = 'FIXME'
 
@@ -20,6 +21,7 @@ urls = (
   '/logout', 'logout',
   '/forums',  'forum',
   '/forums/feed',  'forum_feed',
+  '/reinstall',  'reinstall',
   '(.+)/forum', 'topics',
   '(.+)/forum/new', 'newTopic',
   '(.+)/forum/([^/]*)', 'topic',
@@ -219,6 +221,13 @@ class redirect:
 class articleRedirect:
     def GET(self, slug):
         web.Redirect('/articles/'+slug)
+
+class reinstall:
+  def GET(self):
+    # installData = getInstallJSON()
+    jsondata = "toto"
+    return render.reinstall(jsondata)
+
 
 app = web.application(urls, globals())
 main = app.cgirun()

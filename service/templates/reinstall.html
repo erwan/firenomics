@@ -4,6 +4,35 @@ $var title: Reinstall
 
 <h3>Reinstall my Stuff</h3>
 
-<pre>
-  $jsondata
-<pre>
+<form name="instForm" action="javascript:install()">
+<script type="text/javascript">
+  for ( var i = 0; i < params.length; i++ ) {
+    var t;
+    if ( i == 0 )
+      t = "radio";
+    else
+      t = "checkbox";
+    
+    var c;
+    if ( i < 3 )
+      c = 'checked="checked"';
+    else
+      c = "";
+    
+    var r;
+    if ( params[i]._ref != "" )
+      r = " " + params[i]._ref;
+    else
+      r = "";
+      
+    document.write("<p><label>");
+    document.write('<input type="' + t + '" value="OK" name="' + params[i]._tag + '" ' + c + '/>');
+    document.write(params[i]._name + r + " (" + params[i]._size + ")");
+    document.write("<\/p><\/label>");    
+  }
+  document.writeln("<input type=\"submit\" value=\"Install\" />");
+</script>
+<noscript><p><strong>Sorry. You have to activate JavaScript to use the automatic install script. Please download
+the XPIs from the links below.</strong></p></noscript>
+
+</form>
