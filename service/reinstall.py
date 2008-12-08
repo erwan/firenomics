@@ -31,12 +31,5 @@ UPDATE_URL = "https://versioncheck.addons.mozilla.org/update/VersionCheck.php?re
 #})
 
 
-#def getInstallJSON():
-
-render = web.template.render('templates', base='base')
-
-class reinstall:
-  def GET(self):
-    # installData = getInstallJSON()
-    jsondata = "toto"
-    return render.reinstall(jsondata)
+def getInstallJSON():
+  return "toto"

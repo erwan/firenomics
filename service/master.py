@@ -5,7 +5,7 @@ from vendor import web
 from models import *
 from utils import analytics
 import sanitize
-import reinstall
+from reinstall import getInstallJSON
 
 PUB = 'FIXME'
 
@@ -224,8 +224,8 @@ class articleRedirect:
 
 class reinstall:
   def GET(self):
-    # installData = getInstallJSON()
-    jsondata = "toto"
+    jsondata = getInstallJSON()
+    # jsondata = "toto"
     return render.reinstall(jsondata)
 
 
