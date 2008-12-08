@@ -30,5 +30,6 @@ def getInstallJSON():
       "currentAppVersion": browserver
     }
     url = UPDATE_URL + urllib.urlencode(params)
-    result.append(url)
-  return url
+    myjson[id]["guid"] = id
+    myjson[id]["xpiurl"] = url
+  return myjson
