@@ -257,7 +257,6 @@ class articleRedirect:
 class reinstall:
   def GET(self):
     jsondata = getInstallJSON()
-    # jsondata = "toto"
     return render.reinstall(jsondata)
 
 
